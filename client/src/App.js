@@ -10,10 +10,10 @@ import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn"
 import SignOut from "./components/SignOut";
 import UserAccount from './components/UserAccount';
-import WalletCard from "./WalletCard";
-//import Exchange from "./components/Exchange";
-//import Connectwallet from './Connect-wallet';
+import Balance from './GetBalance';
+import Exchange from './components/Exchange';
 import "./App.css";
+
 
 class App extends Component {
   state = {
@@ -55,6 +55,8 @@ class App extends Component {
     console.log("Contract =", contract);
     console.log("Acoount =", account);
   };
+
+
 
   getAccount = async () => {
     if (this.state.web3 !== null || this.state.web3 !== undefined) {
@@ -113,6 +115,14 @@ class App extends Component {
                   as={Link}
                   to='/help'
                 />
+                <Menu.Item
+                  name='Payment'
+                  color={color}
+                  active={activeItem === 'Exchange'}
+                  onClick={this.handleItemClick}
+                  as={Link}
+                  to='/exchange'
+                />
                 {/* <Exchange /> */}
                 {
                   this.state.loggedIn ?
@@ -163,7 +173,8 @@ class App extends Component {
                       to='/sign-up'
                     />
                 }
-                <WalletCard />
+                {/*<WalletCard />*/}
+                <Balance />
               </Menu>
             </div>
             <Divider inverted />
@@ -204,7 +215,11 @@ class App extends Component {
                   }
                 </Route>
               }
-
+              <Route path='/exchange' >
+                <Exchange></Exchange>
+                <Redirect to ='/Exchange'/>
+              </Route>
+              
               {
                 this.state.loggedIn ?
                   <Route path='/sign-out'>
@@ -225,6 +240,7 @@ class App extends Component {
                     />
                   </Route>
               }
+              
             </Switch>
           </BrowserRouter>
         </div>

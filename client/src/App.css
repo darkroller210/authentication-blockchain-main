@@ -94,3 +94,11 @@ body {
 .user-card {
   margin-top: 30px;
 }
+
+.Image{
+  border-radius: 15px;
+}
+
+.Content{
+  color: whitesmoke;
+}

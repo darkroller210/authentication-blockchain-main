@@ -9,7 +9,7 @@ class Home extends Component {
             <div className='home-page'>
                 <Grid stackable columns={3} textAlign='left'>
                     <Grid.Row>
-                        <Grid.Column width={8}>
+                        <Grid.Column className="Content" width={8}>
                             This is a demonstration of a Blockchain based authentication
                             where login information are not stored in a database, but the
                             hash resulting from login data is stored on a smart contract.
@@ -23,7 +23,7 @@ class Home extends Component {
 
                         </Grid.Column>
                         <Grid.Column width={7}>
-                            <Image src={img} alt='image' />
+                            <Image className="Image" src={img} alt='image' />
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
