@@ -1,3 +1,0 @@
-const Authenticate = async () => {
-
-}
