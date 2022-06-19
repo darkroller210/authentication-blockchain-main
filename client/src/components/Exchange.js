@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 import ErrorMessage from "./ErrorMessage";
 import TxList from "./TxList";
-//import '../bootstrap/bootstrap.min.css';
+import Select from 'react-select'
 import '../bootstrap/Format.css';
 
 const startPayment = async ({ setError, setTxs, ether, addr }) => {
@@ -29,7 +29,11 @@ const startPayment = async ({ setError, setTxs, ether, addr }) => {
 export default function Exchange() {
   const [error, setError] = useState();
   const [txs, setTxs] = useState([]);
-
+  const options = [
+    { value: 'bnb', label: 'BNB', image:'https://seeklogo.com/images/B/binance-coin-bnb-logo-97F9D55608-seeklogo.com.png' },
+    { value: 'ether', label: 'ETH' },
+    { value: 'usdt', label: 'USDT' }
+  ]
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -41,6 +45,8 @@ export default function Exchange() {
       addr: data.get("addr")
     });
   };
+
+
 
   return (
     <form className="Form-payment" onSubmit={handleSubmit}>
@@ -59,6 +65,9 @@ export default function Exchange() {
               />
             </div>
             <div className="my-3">
+            <Select
+                options={options}
+            />
               <input
                 name="ether"
                 type="text"

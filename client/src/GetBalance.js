@@ -22,7 +22,7 @@ function Balance() {
         <button className="button-connect" onClick={connect}>Connect to MetaMask</button>
       ) : (
         <>
-          <p style={{color:'blue'}}>{activeAccount}</p>
+          <p style={{color:'#FFFFFF'}}>{activeAccount}</p>
           <button className="button-connect" onClick={disconnect}>Disconnect</button>
         </>
       )}

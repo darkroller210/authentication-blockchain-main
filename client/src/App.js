@@ -10,7 +10,7 @@ import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn"
 import SignOut from "./components/SignOut";
 import UserAccount from './components/UserAccount';
-import Balance from './GetBalance';
+import Address from './GetBalance';
 import Exchange from './components/Exchange';
 import "./App.css";
 
@@ -115,14 +115,19 @@ class App extends Component {
                   as={Link}
                   to='/help'
                 />
-                <Menu.Item
+                {
+                  this.state.loggedIn ?
+                  <Menu.Item
                   name='Payment'
                   color={color}
                   active={activeItem === 'Exchange'}
                   onClick={this.handleItemClick}
                   as={Link}
                   to='/exchange'
-                />
+                  />
+                  :
+                  console.log('')
+                }
                 {/* <Exchange /> */}
                 {
                   this.state.loggedIn ?
@@ -174,7 +179,7 @@ class App extends Component {
                     />
                 }
                 {/*<WalletCard />*/}
-                <Balance />
+                <Address />
               </Menu>
             </div>
             <Divider inverted />
@@ -184,7 +189,15 @@ class App extends Component {
                 <Home />
               </Route>
               <Route path='/help' >
+              <div style={{color:'white'}}>
                 Help page
+                <br></br>
+                Contact
+                <br></br> 
+                Phone: +84999752148
+                <br></br>
+                Mail: darkroller210@gmail.com
+              </div>
               </Route>
               {
                 this.state.loggedIn ?
@@ -196,7 +209,17 @@ class App extends Component {
                   </Route>
                   :
                   <Route path='/user-account'>
-                    You have been logged out
+                    <div style={{color:'white'}}>You have been logged out</div>
+                  </Route>
+              }
+              {
+                this.state.loggedIn ?
+                <Route path='/Exchange' >
+                    <Exchange />
+                  </Route>
+                  :
+                  <Route path='/Exchange'>
+                    <div style={{color:'white'}}>You have been logged out</div>
                   </Route>
               }
               {
@@ -226,9 +249,9 @@ class App extends Component {
                     <SignOut
                       loggedOut={this.loggedOut}
                     />
-                    You've been logged out
+                    <div style={{color:'white'}}>You've been logged out</div>
                     <br></br>
-                    Thank you
+                    <div style={{color:'white'}}>Thank you</div>
                   </Route>
                   :
                   <Route path='/sign-up' >
