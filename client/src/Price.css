@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+.coin-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+  color: #fff;
+
+}
+
+.coin-search {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.coin-text {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.coin-input {
+  padding-left: 16px;
+  width: 300px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  background-image: linear-gradient(
+    -225deg,
+    #ac32e4 0%,
+    #7918f2 48%,
+    #4801ff 100%
+  );
+
+  color: #e2e2e2;
+}
+
+.coin-input::placeholder {
+  color: #e2e2e2;
+}
+
+.format-title-coin{
+  width: 1000px;
+  text-align: left;
+  border-bottom: 2px solid white;
+
+}
+
+.Name{
+  margin-left: 5%;
+}
+
+.Symbol{
+  margin-left: 4.5%;
+}
+
+.Price{
+  margin-left: 8%;
+}
+
+.Marketcap{
+  margin-left: 7%;
+}
+
+.Price-change-24h{
+  margin-left: 10.5%;
+}
+
+.Volume{
+  margin-left: 10%;
+}
+
+.ui.button.reload{
+  margin-top: 0%;
+  margin-left: 48.5%;
+  margin-bottom: 2%;
+}

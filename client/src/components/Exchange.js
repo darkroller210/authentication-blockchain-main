@@ -30,7 +30,7 @@ export default function Exchange() {
   const [error, setError] = useState();
   const [txs, setTxs] = useState([]);
   const options = [
-    { value: 'bnb', label: 'BNB', image:'https://seeklogo.com/images/B/binance-coin-bnb-logo-97F9D55608-seeklogo.com.png' },
+    { value: 'bnb', label: 'BNB'},
     { value: 'ether', label: 'ETH' },
     { value: 'usdt', label: 'USDT' }
   ]
@@ -41,7 +41,7 @@ export default function Exchange() {
     await startPayment({
       setError,
       setTxs,
-      ether: data.get("ether"),
+      ether: data.get("bnb"),
       addr: data.get("addr")
     });
   };
@@ -64,12 +64,12 @@ export default function Exchange() {
                 placeholder="Recipient Address"
               />
             </div>
-            <div className="my-3">
             <Select
                 options={options}
             />
+            <div className="my-3">
               <input
-                name="ether"
+                name="bnb"
                 type="text"
                 className="input-payment"
                 placeholder="Amount in BNB"

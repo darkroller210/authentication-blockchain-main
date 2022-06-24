@@ -5,13 +5,15 @@ import Formate from './utils/Formate';
 import 'semantic-ui-css/semantic.min.css'
 import { Menu, Divider } from "semantic-ui-react";
 import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
-import Home from './components/Home';
+//import Home from './components/Home';
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn"
 import SignOut from "./components/SignOut";
 import UserAccount from './components/UserAccount';
 import Address from './GetBalance';
 import Exchange from './components/Exchange';
+import Price from './components/Price';
+import News from './components/News'
 import "./App.css";
 
 
@@ -27,7 +29,7 @@ class App extends Component {
     username: ''
     //color: 'teal'
   };
-
+  d
   handleItemClick = (e, { name }) => this.setState({ activeItem: name, color: 'teal' })
 
   componentDidMount = async () => {
@@ -91,7 +93,7 @@ class App extends Component {
     const { activeItem, color } = this.state;
 
     if (!this.state.web3) {
-      return <div>Loading Web3, accounts, and contract...</div>;
+      return <div className="Loading">Loading Web3, accounts, and contract...</div>;
     }
     return (
       <div className="App">
@@ -108,6 +110,14 @@ class App extends Component {
                   to='/'
                 />
                 <Menu.Item
+                  name='News'
+                  color={color}
+                  active={activeItem === 'News'}
+                  onClick={this.handleItemClick}
+                  as={Link}
+                  to='/News'
+                />
+                <Menu.Item
                   name='help'
                   color={color}
                   active={activeItem === 'help'}
@@ -115,6 +125,7 @@ class App extends Component {
                   as={Link}
                   to='/help'
                 />
+                
                 {
                   this.state.loggedIn ?
                   <Menu.Item
@@ -186,18 +197,23 @@ class App extends Component {
 
             <Switch>
               <Route exact path='/' >
-                <Home />
+                <Price />
+              </Route>
+              <Route exact path='/news' >
+                <News></News>
               </Route>
               <Route path='/help' >
-              <div style={{color:'white'}}>
-                Help page
-                <br></br>
-                Contact
-                <br></br> 
-                Phone: +84999752148
-                <br></br>
-                Mail: darkroller210@gmail.com
-              </div>
+                <div style={{color:"whitesmoke"}}>
+                  <h1>Help page</h1>
+                </div>
+                <div className="Contact">
+                  <h2>Contact</h2>
+                  <img className="image-icoin" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Circle-icons-mail.svg" alt="Mail Icoin"></img>
+                  Mail: darkroller210@gmail.com
+                  <br></br>
+                  <img className="image-icoin" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Circle-icons-phone.svg" alt="Phone Icoin"></img>
+                  Phone: +84999736521
+                </div>
               </Route>
               {
                 this.state.loggedIn ?
@@ -242,7 +258,7 @@ class App extends Component {
                 <Exchange></Exchange>
                 <Redirect to ='/Exchange'/>
               </Route>
-              
+
               {
                 this.state.loggedIn ?
                   <Route path='/sign-out'>
@@ -265,6 +281,7 @@ class App extends Component {
               }
               
             </Switch>
+          
           </BrowserRouter>
         </div>
       </div>
