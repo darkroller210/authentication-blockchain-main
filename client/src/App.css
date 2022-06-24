@@ -9,7 +9,7 @@ body {
 
 .App {
   text-align: center;
-  height: 150vh;
+  height: 170vh;
   font-size: 20px;
   font-weight: 100;
   word-spacing: 1px;
@@ -17,8 +17,8 @@ body {
   font-family: "Ubuntu", "Sharp Sans No1", Sans-serif;
   background-image: linear-gradient(
       to right bottom,
-      rgba(32, 32, 31, 0.98),
-      rgba(11, 17, 20, 0.98)
+      rgba(66, 66, 63, 0.98),
+      rgba(24, 37, 44, 0.98)
     ),
     url(./img/background4.jpeg);
   background-size: cover;
@@ -101,4 +101,22 @@ body {
 
 .Content{
   color: whitesmoke;
+}
+
+.Contact{
+  font-family: 'Times New Roman', Times, serif;
+  color: whitesmoke;
+  margin: 10% 20% 20% 20%;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+}
+
+.image-icoin{
+  width: 50xp;
+  height: 50px;
+}
+
+.Loading{
+  text-align: center;
+  padding-top: 20%;
 }

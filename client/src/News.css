@@ -1,0 +1,56 @@
+*{
+    color: whitesmoke;
+}
+
+.format-new{
+    
+}
+
+.row:hover{
+    cursor: pointer;
+}
+
+.col-sm{
+    border: 1px whitesmoke solid;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.post-date{
+    text-align: left;
+    font-size: 15px;
+    color: rgb(128, 125, 125);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.title-post{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(77, 172, 250);
+}
+
+.title-2{
+    font-weight: bold;
+}
+
+.content{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+.bottun-content{
+    color: black;
+}
+
+.row-2{
+    margin-top: 40px;
+}
+
+.donate{
+    color: black;
+    height: 31px;
+    width: 120px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    margin-right: 5px;
+}
